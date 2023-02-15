@@ -1,0 +1,702 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+ul,ol{list-style: none;}
+a{text-decoration: none; color: #333;}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+   }
+   
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    box-sizing: border-box;
+  }
+body{
+    font-family: 'NanumSquareNeo-Variable';
+    font-size: 15px;
+    line-height: 22px;
+    color: #333;
+    min-width: 1320px;
+}
+/*header*/
+#header{
+    height: 100px;
+    margin: 0 auto;
+    width: 1320px;
+}
+#header img{
+    display: block;
+}
+.logo{
+    float: left;
+    width: 218px;/*193px+25px(icon여백과 동일)*/
+    padding-top: 13px;
+}
+.gnb{
+    float: left;
+    padding-top: 42px;
+}
+.gnb> li{
+    float: left;
+    height: 30px;
+}
+.gnb >li> a{
+    padding: 5px 22px 39px 22px;
+    margin: 0 40px;
+    font-size: 16px;
+}
+/*underline효과_S*/
+.gnb>li:after {
+    display:block;
+    content: '';
+    border-bottom: #141853de 2px solid;  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+    margin-top: 33px;
+  }
+.gnb>li:hover:after { transform: scaleX(1); }
+/*underline효과_E*/
+.submenu_wrap{
+    background-color: rgba(233, 225, 214, 0.932);
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 130px;
+    z-index: 9;
+}
+.submenu{
+    margin: 0 auto;
+    width: 950px;
+    z-index: 10;
+    padding-left: 55px;
+}
+.sub_left{
+    float: left;
+    width: 65%;
+    padding-top: 30px;
+}
+.sub_right img{
+    display: inline-block;
+}
+
+.sub_right{
+    float: right;
+    width: 35%;
+    padding-top: 10px;
+}
+.sub_right li img{
+    float: left;
+    width: 100%;
+    padding-left: 10px;
+}
+.submenu li{
+    float: left;/*너비 대신 여백!*/
+}
+.submenu li a{
+    padding: 4px 7px;
+    margin: 0 37px;
+    font-weight: bold;
+    color: rgb(14, 14, 77);
+}
+.icon_1 li a img{
+    display: inline-block;
+}
+.icon_1{
+    float: right;
+    padding-top: 40px;
+}
+.icon_1 li{
+    float: left;
+    padding-left: 35px;
+}
+/*login popup*/
+
+.popup_open{
+    cursor: pointer;
+    display: inline-block;
+}
+.popup_wrap{
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+.popup{
+    width: 650px;
+    height: 400px;
+    background-color: hsla(40, 5%, 78%, 0.863);
+    background-position: 1%;
+    position: absolute;
+    border-radius: 20px;
+    top:200px ;
+    left: 47%;
+    margin-left: -300px;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+}
+.popup h3 img{
+    display: inline-block;
+    width: 25%;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+.close_btn{
+    display: inline-block;
+    width: 19px;
+    height: 18px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top:10px;
+    box-shadow: 1px 0.5px 1px rgba(0,0,0,0.3);
+}
+.close_btn:hover{
+    box-shadow: 0.5px 0.5px 0.5px rgba(0,0,0,0.3) inset;
+}
+.login_box{
+    width: 100%;
+    height: 60%;
+    margin: 20px auto;
+    background: url(../images/header/login_bg.png) no-repeat center top;
+    background-size: 70%;
+    position: relative;
+}
+.login_box form{
+    padding-top: 20px;
+    padding-left: 140px;
+}
+.login_box input{
+    padding: 7px 150px 7px 5px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-family:'NanumSquareNeo-Variable';
+    color: #554632;
+    outline: none;
+}
+.login_btn{
+    position: absolute;
+    bottom: 85px;
+    right: 20px;
+    width: 50%;
+}
+.login_btn1,.login_btn2{
+    font-size: 14px;
+    display: inline-block;
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 20%;
+    box-shadow:1.2px 1px 1.2px rgba(0,0,0,0.3);
+}
+.login_btn1:hover,.login_btn2:hover{
+    box-shadow: 1.2px 1.2px 1.2px rgba(0, 0, 0, 0.3) inset;
+}
+.login_btn1{
+    background-color: #c4ad8e;
+}
+.login_btn2{
+    background-color: #384057;
+}
+.sign{
+    margin-left: 140px;
+    color: #1b2540;
+    font-weight: bold;
+}
+.login_sns{
+    position: absolute;
+    bottom: 25px;
+    left: 55px;
+    width: 100%;
+}
+.login_sns img{
+    display: inline-block;
+}
+.login_sns li{
+    margin-left: 25px;
+    opacity: 0.8;
+}
+.login_sns li:hover{
+    opacity:1;
+}
+.login_sns li:nth-child(2),.login_sns li:nth-child(3){
+   padding-top: 3px;
+}
+/*banner*/
+#banner{
+    height: 400px;
+    margin: 0 auto 160px;
+    width: 100%;
+    position: relative;
+}
+#banner img{
+    width: 100%;
+    display: block;
+    background-color: rgba(248, 248, 248, 0.747);
+}
+.banner_title{
+    position: absolute;
+    bottom: 85px;
+    right: 0;
+    width: 51%;
+    font-size: 45px;
+    color: #10390F;
+}
+.banner_title strong{
+    font-size: 130px;
+}
+svg {
+    position: absolute;
+    font: 20em Ubuntu;
+    letter-spacing: 0.15em;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    top: 120px;
+  }
+  
+  svg text {
+    fill: #10390F;
+    stroke: #10390F;
+    fill-opacity: 1;
+    stroke-width: 0;
+    stroke-dasharray: 100% 0;
+    animation: stroke-offset 3s ease-out;
+  }
+  
+  @keyframes stroke-offset {
+    0% {
+      fill-opacity: 0;
+      stroke-width: 0;
+      stroke-dasharray: 0% 100%;
+    }
+    25% {
+      stroke-width: 3px;
+    }
+    50% {
+      fill-opacity: 0;
+    }
+    75% {
+      stroke-width: 3px;
+    }
+    100% {
+      stroke-width: 0;
+    }
+  }
+/*section1, "for business 시작*/
+#section1{
+    width: 1320px;
+    margin: 0 auto;
+}
+.title{
+    height: 260px;
+    width: 100%;
+}
+.bg1{
+    background: url(../images/shop/category1.png) center;
+}
+/*contents1, "note" 시작*/
+.contents1{
+    background: url(../images/shop/note_bg.png) center;
+    width: 1320px;
+    height: 800px;
+    margin: 80px 0 160px;
+    position: relative;
+}
+.contents1 img{
+    display: inline-block;
+}
+.contents1 li{
+    position: absolute;
+}
+.contents1 li:nth-child(1){
+    left: 0;
+    bottom: 0;
+    width: 308px;
+    height: 524px;
+}
+.contents1 li:nth-child(1) a{
+   display: inline-block;
+   margin-top: 156px;
+}
+.contents1 li:nth-child(2){
+    right: 440px;
+    top: 30px;
+    width: 444px;
+}
+.contents1 li:nth-child(3){
+    right: 270px;
+    bottom: 50px;
+    width: 405px;
+}
+.text{
+    position: absolute;
+    background-color: rgba(0,0,0,0.2);
+    padding: 20px 15px 20px 20px;
+}
+.text1{
+    text-align: right;
+    right: 10px;
+    top: 5px;
+    
+}
+.text2{
+    text-align: left;
+    right: 110px;
+    top: 60px;
+    
+}
+.text3{
+    text-align: left;
+    right: 50px;
+    bottom: 150px;
+    
+}
+.text_span{
+    font-weight: bold;
+    color: #1b2540;
+}
+strong{
+    font-size: 17px;
+    color: #1b2540;
+}
+.explain{
+    margin: 7px 0;
+}
+.contents1 li a{
+    position: relative;
+}
+/*detail 버튼 설정*/
+.btn{
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    opacity: 0;
+    width: 76px;
+}
+.contents1 li a:hover .btn,.contents2 li a:hover .btn,.pic_left a:hover .btn,.pic_right a:hover .btn,.ecobag_ex li:nth-child(2):hover .btn,.bottle_box li a:hover .btn,.gift_pic li a:hover .btn{
+    opacity: 1;
+    transition: opacity 1s;
+}
+/*contents2, #on the table 시작*/
+.contents2{
+    background: url(../images/shop/table_bg.png) center;
+    width: 1320px;
+    height: 800px;
+    margin: 80px 0 160px;
+}
+.contents2 img{
+    display: inline-block;
+}
+.table{
+    overflow: hidden;
+    padding-top: 70px;
+    padding-left: 183px;
+}
+.table li{
+    float: left;
+    margin-right: 7px;
+    position: relative;
+}
+.table_bar{
+    overflow: hidden;
+    
+    padding-left: 193px;
+}
+.table_bar li{
+    float: left;
+    margin-right: 36px;
+    position: relative;
+}
+.table_bar li p strong{
+    position: absolute;
+    top: 17px;
+    left: 15px;
+    width: 100%;
+}
+.table_text{
+    overflow: hidden;
+    width: 1055px;
+    margin: 0 auto;
+    padding-left: 70px;
+}
+.table_text li{
+    float: left;
+    padding-right: 65px;
+}
+.table_text li:nth-child(2){
+    padding-right: 80px;
+}
+.table_text li:nth-child(3){
+    padding-right: 0px;
+}
+.span1{
+    text-align: right;
+}
+/*contents, #book 시작*/
+.contents3{
+    background: url(../images/shop/book_bg.png) center;
+    width: 1320px;
+    height: 800px;
+    margin: 80px 0 160px;
+    position: relative;
+}
+.text_left{
+    position: absolute;
+    width: 33%;
+    bottom: 20px;
+    left: 50px;
+    padding-left:50px;
+    padding-top:20px;
+    background-color: #fff;
+    background: url(../images/shop/book_bar_r.png) left no-repeat;
+}
+.text_right{
+    position: absolute;
+    width:45%;
+    top: 40px;
+    right: 30px;
+    text-align: right;
+    padding-top: 20px;
+    padding-right: 50px;
+    background: url(../images/shop/book_bar_l.png) right no-repeat;
+}
+.pic_left{
+    position: absolute;
+    width: 436px;
+    top: 70px;
+    left: 90px;
+}
+.pic_right{
+    position: absolute;
+    width: 484px;
+    bottom: 20px;
+    right: 80px;
+}
+.span2{
+    text-align: left;
+}
+.btn2{
+    position: absolute;
+    width:76px;
+    bottom: 190px;
+    left: 180px;
+}
+.btn3{
+    position: absolute;
+    top:200px;
+    left: 200px;
+    width: 76px;
+}
+.color_bar{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 145px;
+}
+/*section2 시작*/
+#section2{
+    width: 1320px;
+    margin: 0 auto 160px;
+}
+.bg2{
+    background: url(../images/shop/category2.png) center;
+}
+.earth{
+    margin-top: 80px;
+}
+.earth_contents{
+    width: 100%;
+    height: 800px;
+    background: url(../images/shop/earth_bg.png) no-repeat center;
+    position: relative;
+}
+.ecobag_color{
+    padding: 90px 0 0 40px;
+    width: 80%;
+    position: relative;
+}
+.color_text{
+    font-size: 25px;
+    position: absolute;
+    width: 10%;
+    top: 110px;
+    left: 150px;
+}
+.color_text p{
+    padding-bottom:55px ;
+}
+.ecobag_ex{
+    width: 683.5px;
+    height: 283px;
+    position: absolute;
+    top: 35px;
+    right: 200px;
+    overflow: hidden;
+}
+.ecobag_ex li:nth-child(1){
+    
+    float: left;
+    text-align: right;
+    padding-bottom: 40px;
+    width: 60%;
+    background: url(../images/shop/color_font.png) no-repeat bottom right;
+}
+.ecobag_ex li:nth-child(2){
+    float: right;
+    position: relative;
+}
+.bottle_box{
+    width: 563px;
+    height: 421px;
+    position: absolute;
+    bottom: 15px;
+    left: 60px;
+    overflow: hidden;
+}
+.bottle_box li:nth-child(1){
+    float: left;
+    width: 294px;
+}
+.bottle_box li:nth-child(2){
+    float: right;
+    width: 257px;
+    padding-top: 170px;
+}
+.bottle_text1{
+    position: absolute;
+    width: 40%;
+    bottom: 305px;
+    left: 370px;
+}
+
+.bottle_text2{
+    position: absolute;
+    width: 40%;
+    bottom: 160px;
+    left: 640px;
+    color: #fff;
+}
+.btn5{
+    position: absolute;
+    width: 76px;
+    bottom: 100px;
+    left: 20px;
+}
+.btn6{
+    position: absolute;
+    width: 76px;
+    bottom: 0px;
+    left: 320px;
+}
+.bottle_color{
+    position: absolute;
+    width: 254px;
+    bottom: 10px;
+    right: 420px;
+}
+/*section3 시작*/
+#section3{
+    width: 1920px;
+    margin: 0 auto 160px;
+}
+.bg3{
+    background: url(../images/shop/category3.png) center no-repeat;
+}
+.friend{
+    margin-top: 80px;
+    background: url(../images/shop/friend_bg.png) no-repeat center;
+    height: 800px;
+    position: relative;
+    background-color: #E6E2DE;
+}
+.gift_pic{
+    height: 337px;
+    width: 1141px;
+    position: absolute;
+    top: 180px;
+    left: 480px;
+}
+.gift_pic li:nth-child(1){
+    float: left;
+    width: 465px;
+}
+.gift_pic li:nth-child(2){
+    float: right;
+    width: 465px;
+}
+.gift_text{
+    position: absolute;
+    bottom: 35px;
+    right: 300px;
+    overflow: hidden;
+    width: 1100px;
+}
+.gift_text li:nth-child(1){
+    float: left;
+    padding-left: 20px;
+}
+.gift_text li:nth-child(2){
+    float: right;
+    padding-right: 20px;
+}
+.gift_tag{
+    text-align: center;
+    overflow: hidden;
+    width: 800px;
+    margin-left: 650px;
+    padding-top: 80px;
+    position: relative;
+}
+.gift_tag li:nth-child(1){
+    float: left;
+    padding-left: 20px;
+}
+.gift_tag li:nth-child(2){
+    float: right;
+    padding-right: 20px;
+}
+.btn7{
+    position: absolute;
+    width: 76px;
+    bottom: 10px;
+    left: 20px;
+}
+.btn8{
+    position: absolute;
+    width: 76px;
+    bottom: 10px;
+    left: 700px;
+}
+/*footer*/
+#footer{
+    width: 1920px;
+    margin: 0 auto;
+}
+.footer_logo{
+    width: 100%;
+    height: 150px;
+    background-color: #1b2540;
+    text-align: center;
+}
+.footer_logo img{
+    display: inline-block;
+    padding-top: 35px;
+}
+.footer_illust{
+    width: 100%;
+    height: 240px;
+    background: url(../images/shop/footer_illust.png) center;
+}
