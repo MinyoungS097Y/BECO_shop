@@ -26,6 +26,7 @@ body{
     line-height: 22px;
     color: #333;
     min-width: 1320px;
+    position: relative;
 }
 /*header*/
 #header{
@@ -609,7 +610,7 @@ strong{
 }
 /*section3 시작*/
 #section3{
-    width: 1920px;
+    width: 100%;
     margin: 0 auto 160px;
 }
 .bg3{
@@ -680,9 +681,23 @@ strong{
     bottom: 10px;
     left: 700px;
 }
+/*scroll_menu*/
+#scroll_menu{
+    position: absolute;
+    bottom: 150px;
+    right: 40px;
+    border: #10390F 3px solid;
+    background-color: #d8e7d8;
+    width: 100px;
+    border-radius: 5%;
+    position: fixed;
+}
+#scroll_menu li{
+    text-align: center;
+}
 /*footer*/
 #footer{
-    width: 1920px;
+    width: 100%;
     margin: 0 auto;
 }
 .footer_logo{
